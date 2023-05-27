@@ -49,3 +49,17 @@
         }
     }
 }
+.flooring__btnW {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    margin-top: 50px;
+}
+.flooring__btn {
+    @include btn;
+}
+.flooring__btnM {
+    @include btn;
+    padding: 10px;
+}

@@ -1,0 +1,14 @@
+.forms {
+    padding: 0 0 20px;
+}
+.forms__wrapper {
+}
+.forms__box {
+}
+.forms__title {
+    @include h2Title;
+    margin: 0;
+}
+.forms__button {
+    @include btn
+}
