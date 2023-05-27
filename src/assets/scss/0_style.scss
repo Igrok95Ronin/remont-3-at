@@ -40,8 +40,33 @@ body{
     color: #000;
 }
 
-$btnColorFixed : #000;
+$btnColorFixed : #287dba;
+$mainColor : #287dba;
+$mainColor2 : #f5d117;
 
 @mixin btn {
-
+    background-color: $mainColor;
+    color: #fff;
+    font-weight: 700;
+    letter-spacing: 1px;
+    font-size: 20px;
+    padding: 10px 10px 10px 40px;
+    span{
+        position: relative;
+        &::before{
+            content: '';
+            position: absolute;
+            background-image: url(../img/ok4.png);
+            background-size: contain;
+            background-repeat: no-repeat;
+            width: 25px;
+            height: 25px;
+            left: -25px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+    }
+    &:hover {
+        color: #fff;
+    }
 }
