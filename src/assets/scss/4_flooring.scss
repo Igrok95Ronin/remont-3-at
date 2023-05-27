@@ -1,0 +1,51 @@
+.flooring {
+    padding: 0 0 35px;
+}
+.flooring__box {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+}
+.flooring__left {
+}
+.flooring__imgW {
+}
+.flooring__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.flooring__title {
+    @include h2Title;
+}
+.flooring__subTitle {
+    @include subTitle;
+}
+.flooring__right {
+    padding: 10px;
+}
+.flooring__txt {
+    line-height: 26px;
+}
+.flooring__ul {
+    margin-top: 20px;
+    font-weight: 700;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    li{
+        position: relative;
+        padding-left: 40px;
+        &::before{
+            content: '';
+            position: absolute;
+            background-image: url(../img/001.png);
+            background-size: cover;
+            width: 23px;
+            height: 23px;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+    }
+}
