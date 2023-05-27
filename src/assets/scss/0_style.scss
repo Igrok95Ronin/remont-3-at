@@ -70,3 +70,25 @@ $mainColor2 : #f5d117;
         color: #fff;
     }
 }
+
+@mixin h2Title {
+    background-color: $mainColor;
+    color: #fff;
+    font-weight: 700;
+    padding: 5px;
+    width: 80%;
+    height: 48px;
+    clip-path: polygon(0% 0%, 95% 0%, 100% 100%, 0% 100%);
+    margin-top: -48px;
+    display: flex;
+    align-items: center;
+}
+@mixin subTitle {
+    background-color: $mainColor2;
+    color: #000;
+    font-weight: 700;
+    padding: 10px 5px;
+    height: 53px;
+    display: flex;
+    align-items: center;
+}
