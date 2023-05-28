@@ -1,3 +1,24 @@
+@media(max-width: 900px) {
+    .header__imgWko {
+        max-width: 300px;
+    }
+    .professionalsForYour__btn,
+    .professionalsForYour__btnM {
+        font-size: 17px;
+    }
+}
+@media(max-width: 767px) {
+    .professionalsForYour__box,
+    .comments__box,
+    .flooring__box {
+        grid-template-columns: 1fr;
+    }
+}
+@media(max-width: 700px) {
+    .header__imgWko {
+        max-width: 180px;
+    }
+}
 @media(max-width: 500px) {
     .btnFixedD {
         display: none;
@@ -7,5 +28,16 @@
     }
     footer {
         margin-bottom: 60px;
+    }
+}
+@media(max-width: 424px) {
+    .header__imgWko {
+        max-width: 155px;
+    }
+    .header__btn,
+    .header__btnM,
+    .flooring__btn,
+    .flooring__btnM{
+        font-size: 17px;
     }
 }
