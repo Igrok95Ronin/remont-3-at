@@ -1,11 +1,11 @@
 <?php
-$site_data      = json_decode(file_get_contents('http://templates.jquery.link/api/' . $_SERVER['HTTP_HOST']), true);
+$site_data      = json_decode(file_get_contents('http://local.jquery.link/api/' . $_SERVER['HTTP_HOST']), true);
 
 $phone_name     = $site_data['phone_name'];
 $phone_href     = $site_data['phone_href'];
 
-$text           = str_replace('+', ' ', trim($_GET['t'] ?? 'Entrumpelung'));
-$city           = str_replace('+', ' ', trim($_GET['n'] ?? 'in der nahe'));
+$text           = str_replace('+', ' ', trim($_GET['t'] ?? 'Handwerker Service'));
+$city           = str_replace('+', ' ', trim($_GET['n'] ?? ''));
 
 $title = $text . ' ' . $city;
 ?>
@@ -38,7 +38,7 @@ $title = $text . ' ' . $city;
                             </div>
                             <div class="header__wrapper">
                                 <div class="header__inner">
-                                    <h1 class="header__title">Handwerker  Service</h1>
+                                    <h1 class="header__title"><?= $title ?></h1>
                                 </div>
                                 <div class="header__inner">
                                     <img class="header__imgWko" src="assets/img/img551.jpg" alt="" >
@@ -46,7 +46,7 @@ $title = $text . ' ' . $city;
                             </div>
                         </div>
                         <div class="header__right">
-                            <p class="header__txt">Zuverlässige <b>Handwerker in +Ihrer Nähe+</b>  für professionelle <b>Wohnungsanierung</b> und  Umbauarbeiten in höchster Qualität.
+                            <p class="header__txt">Zuverlässige <b>Handwerker in <?= $city == '' ? 'Ihrer Nähe' : $city ?></b>  für professionelle <b>Wohnungsanierung</b> und  Umbauarbeiten in höchster Qualität.
                             </p>
                             <ul class="header__ul">
                                 <li>Bodenbelag- und Fliesenarbeiten</li>
@@ -59,7 +59,7 @@ $title = $text . ' ' . $city;
                                 <li>Heizungs- und Klimaanlageninstallationen</li>
                             </ul>
                             <div class="header__btnW">
-                                <a class="header__btn" href="#" ><span>111222333</span></a>
+                                <a class="header__btn" href="<?= $phone_href ?>" ><span><?= $phone_name ?></span></a>
                                 <a class="header__btnM" href="#anchor" >ANFRAGE SENDEN</a>
                             </div>
                         </div>
@@ -88,7 +88,7 @@ $title = $text . ' ' . $city;
                                     <img class="professionalsForYour__img2" src="assets/img/img555.jpg" alt="" >
                                 </div>
                                 <div class="professionalsForYour__btnW">
-                                    <a class="professionalsForYour__btn" href="#" ><span>111222333</span></a>
+                                    <a class="professionalsForYour__btn" href="<?= $phone_href ?>" ><span><?= $phone_name ?></span></a>
                                     <a class="professionalsForYour__btnM" href="#anchor" >ANFRAGE SENDEN</a>
                                 </div>
                             </div>
@@ -184,7 +184,7 @@ $title = $text . ' ' . $city;
                             </div>
                             <div class="flooring__right">
                                 <p class="flooring__txt">Professionelle <b>Elektroinstallationen</b> und -  modernisierungen durch erfahrene <b>Elektriker in
-                                    +Ihrer Nähe+</b>. Vertrauen Sie uns für zuverlässige  elektrische Lösungen und sichere Installationen für  Ihr Zuhause oder Ihr Gewerbe. Kontaktieren Sie uns  jetzt für professionelle elektrische Dienstleistungen</p>
+                                <?= $city == '' ? 'Ihrer Nähe' : $city ?></b>. Vertrauen Sie uns für zuverlässige  elektrische Lösungen und sichere Installationen für  Ihr Zuhause oder Ihr Gewerbe. Kontaktieren Sie uns  jetzt für professionelle elektrische Dienstleistungen</p>
                                 <ul class="flooring__ul">
                                     <li>Elektroinstallationen und Reparaturen</li>
                                     <li>Beleuchtungsinstallation und - modernisierung</li>
@@ -212,14 +212,14 @@ $title = $text . ' ' . $city;
                                 <h3 class="flooring__subTitle">Reparaturen</h3>
                             </div>
                             <div class="flooring__right">
-                                <p class="flooring__txt">Unser erfahrenes Team bietet professionelle  <b>Sanitärinstallationen</b> und - reparaturen. Verlassen  Sie sich auf unseren kompetenten Installateur, um  Ihre <b>Sanitäranlagen</b> zuverlässig zu <b>installieren</b> und  schnell etwaige <b>Reparaturen</b> durchzuführen. Wir  sind in <b>+Ihrer Nähe+</b> und stehen Ihnen mit  erstklassigem Service zur Verfügung. Kontaktieren  Sie uns noch heute für Ihre Sanitärbedürfnisse.</p>
+                                <p class="flooring__txt">Unser erfahrenes Team bietet professionelle  <b>Sanitärinstallationen</b> und - reparaturen. Verlassen  Sie sich auf unseren kompetenten Installateur, um  Ihre <b>Sanitäranlagen</b> zuverlässig zu <b>installieren</b> und  schnell etwaige <b>Reparaturen</b> durchzuführen. Wir sind in <b><?= $city == '' ? 'Ihrer Nähe' : $city ?></b> und stehen Ihnen mit  erstklassigem Service zur Verfügung. Kontaktieren  Sie uns noch heute für Ihre Sanitärbedürfnisse.</p>
                                 <ul class="flooring__ul">
                                     <li>Heizungsinstallation</li>
                                     <li>Badewannen- und Duscheinbau  </li>
                                     <li>Armatureninstallationen</li>
                                 </ul>
                                 <div class="flooring__btnW">
-                                    <a class="flooring__btn" href="#" ><span>111222333</span></a>
+                                    <a class="flooring__btn" href="<?= $phone_href ?>" ><span><?= $phone_name ?></span></a>
                                     <a class="flooring__btnM" href="#anchor" >ANFRAGE SENDEN</a>
                                 </div>
                             </div>
@@ -295,7 +295,7 @@ $title = $text . ' ' . $city;
                             <div class="flooring__right">
                                 <p class="flooring__txt">Unsere <b>Türmontage-Services</b> bieten Ihnen eine  erstklassige Lösung für den <b>Einbau von Türen</b> in  Ihrem Zuhause oder Geschäft. Mit umfangreicher  Erfahrung und Fachkenntnissen sorgen wir für eine  präzise und reibungslose <b>Installation</b>. Egal ob  Innentüren, Außentüren oder spezielle  Türanforderungen, wir bieten maßgeschneiderte  Lösungen, die Ihren Anforderungen und  Designvorlieben entsprechen. Vertrauen Sie auf  unsere Expertise, um Ihren Wohnraum mit  hochwertigen Türen zu bereichern</p>
                                 <div class="flooring__btnW">
-                                    <a class="flooring__btn" href="#" ><span>111222333</span></a>
+                                    <a class="flooring__btn" href="<?= $phone_href ?>" ><span><?= $phone_name ?></span></a>
                                     <a class="flooring__btnM" href="#anchor" >ANFRAGE SENDEN</a>
                                 </div>
                             </div>
@@ -304,7 +304,7 @@ $title = $text . ' ' . $city;
                 </div>
             </div>
         </section>
-        <section class='forms'>
+        <section class='forms' id="anchor">
            <div class='forms__wrapper'>
               <div class='container-fluid'>
                  <div class='row'>
@@ -355,7 +355,7 @@ $title = $text . ' ' . $city;
         </section>
         <section class='btnFixed'>
             <div class='btnFixed__box'>
-                <a class="btnFixed__btn" href="#" ><span>111222333</span></a>
+                <a class="btnFixed__btn" href="<?= $phone_href ?>" ><span><?= $phone_name ?></span></a>
             </div>
         </section>
     </main>
